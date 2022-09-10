@@ -4,19 +4,21 @@ import StarIcon from "@mui/icons-material/Star";
 import ProductsCart from "./ProductsCart";
 import { sampleCartData } from "./CartData";
 import { useStateValue } from "./StateProvider";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
-  const { state, dispatch } = useStateValue();
+  const navigate = useNavigate();
+  const { state, dispatch, getBasketTotal } = useStateValue();
   const basket = state.basket;
   const user = state.user;
 
-  const getBasketTotal = (basket) => {
-    var sum = 0;
-    for (var i = 0; i < basket.length; i++) {
-      sum += Number(basket[i].price * basket[i].quantity);
-    }
-    return Math.floor(sum * 100) / 100;
-  };
+  //   const getBasketTotal = (basket) => {
+  //     var sum = 0;
+  //     for (var i = 0; i < basket.length; i++) {
+  //       sum += Number(basket[i].price * basket[i].quantity);
+  //     }
+  //     return Math.floor(sum * 100) / 100;
+  //   };
 
   //   useEffect(() => {
   //     console.log("The basket contains:");
@@ -47,6 +49,7 @@ const Checkout = () => {
                 No items selected. <span>Select all items</span>
               </p>
             </div>
+            div
             <div className={s["basket-container"]}>
               {basket.map((item) => {
                 return (
@@ -77,7 +80,9 @@ const Checkout = () => {
           <input type="checkbox" size="50" />
           This order contains a gift
         </p>
-        <button className={s["order-btn"]}>Proceed to checkout</button>
+        <button className={s["order-btn"]} onClick={() => navigate("/payment")}>
+          Proceed to checkout
+        </button>
       </div>
     </div>
   );

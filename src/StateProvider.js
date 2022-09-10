@@ -7,20 +7,28 @@ import { createContext, useContext, useReducer, useEffect } from "react";
 import reducer, { initialState } from "./reducer";
 
 //This is the Data Layer
-export const StateContext = createContext();
+const StateContext = createContext();
 
 export const StateProvider = ({ children }) => {
-  const localData = JSON.parse(localStorage.getItem("state"));
+  const localData = localStorage.getItem("amazonState")
+    ? JSON.parse(localStorage.getItem("amazonState"))
+    : initialState;
+
   const [state, dispatch] = useReducer(reducer, localData);
 
   useEffect(() => {
-    // console.log("UseEffect triggered");
-    localStorage.setItem("state", JSON.stringify(state));
-    // console.log(state);
+    localStorage.setItem("amazonState", JSON.stringify(state));
   }, [state]);
+  const getBasketTotal = (basket) => {
+    var sum = 0;
+    for (var i = 0; i < basket.length; i++) {
+      sum += Number(basket[i].price * basket[i].quantity);
+    }
+    return Math.floor(sum * 100) / 100;
+  };
 
   return (
-    <StateContext.Provider value={{ state, dispatch }}>
+    <StateContext.Provider value={{ state, dispatch, getBasketTotal }}>
       {children}
     </StateContext.Provider>
   );

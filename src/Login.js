@@ -9,6 +9,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { state, dispatch } = useStateValue();
+
   const signIn = (e) => {
     e.preventDefault(); //prevent refreshing in react
 

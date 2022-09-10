@@ -15,7 +15,7 @@ const Header = () => {
   const user = state.user;
   const basket = state.basket;
 
-  const handleAuthentication = () => {
+  const logout = () => {
     if (user) {
       auth.signOut();
     }
@@ -56,7 +56,7 @@ const Header = () => {
         className="sign-in"
         onClick={() => {
           //if there is a user, then log him out
-          handleAuthentication();
+          logout();
           //if no user, then push to login page. Otherwise, stay at home page.
           if (!user) {
             navigate("/login");

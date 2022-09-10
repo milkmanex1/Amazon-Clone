@@ -36,6 +36,7 @@ const Product = ({ itemCode, title, img, price, rating }) => {
           quantity: 1,
         },
       });
+      console.log("item has been added");
       //item is dispatched to the UseContext State and localStorage
     }
   };

@@ -7,10 +7,10 @@ import { StateProvider } from "./StateProvider";
 import reducer, { initialState } from "./reducer";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <StateProvider>
       <App />
     </StateProvider>
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById("root")
 );
