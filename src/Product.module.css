@@ -14,26 +14,141 @@
 .star-icon {
   color: orange;
 }
-.product img {
+.product-image {
   max-height: 200px;
   width: 100%;
   object-fit: contain;
   margin-bottom: 15px;
+  cursor: pointer;
 }
+/* .fly-to-cart {
+  position: absolute;
+  animation-name: fly-to-cart 1s ease-in-out;
+}
+@keyframes fly-to-cart {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  50% {
+    left: 300px;
+    top: 300px;
+  }
+  100% {
+    right: 10px;
+    top: 10px;
+  }
+} */
+
 .product-info {
   font-size: 18px;
   font-weight: 500;
 }
-.product button {
-  background: #facb54;
+.add-btn {
+  width: 150px;
+  height: 40px;
+  background: #ffc83d;
   border: 1px solid;
   margin-top: 10px;
   border-color: #a88734 #9c7e31 #846a29;
   color: #111;
-  padding: 7px;
+  padding: 12px;
   cursor: pointer;
   border-radius: 2px;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
 }
-.product button:hover {
+.add-btn:hover {
   background: #f0b522;
+}
+/**------------- The animation------------- */
+.shopping-cart {
+  position: absolute;
+  z-index: 2;
+  /* these 3 lines work tgt to center the element within its div. Just the first two lines itself will not work. For more info see stackoverflow */
+  top: 50%;
+  left: -10%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+}
+.box {
+  position: absolute;
+  z-index: 3;
+  top: -25%;
+  left: 50%;
+  font-size: 0.8rem;
+  transform: translate(-50%, -50%);
+}
+.add-btn span {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.add-to-cart {
+  opacity: 1;
+  width: 150px;
+}
+.added {
+  opacity: 0;
+  width: 150px;
+}
+.clicked .shopping-cart {
+  animation: cart 1.2s ease-in-out forwards;
+}
+.clicked .box {
+  animation: box 1.2s ease-in-out forwards;
+}
+.clicked .add-to-cart {
+  animation: txt1 1.2s ease-in-out forwards;
+}
+.clicked .added {
+  animation: txt2 1.2s ease-in-out forwards;
+}
+@keyframes cart {
+  0% {
+    left: -10%;
+  }
+  40%,
+  60% {
+    left: 50%;
+  }
+  100% {
+    left: 110%;
+  }
+}
+@keyframes box {
+  0%,
+  40% {
+    top: -20%;
+  }
+  40%,
+  60% {
+    top: 35%;
+    left: 50%;
+  }
+  100% {
+    top: 35%;
+    left: 112%;
+  }
+}
+@keyframes txt1 {
+  0% {
+    opacity: 1;
+  }
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes txt2 {
+  0%,
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

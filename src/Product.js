@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./Product.module.css";
 import StarIcon from "@mui/icons-material/Star";
 import { useStateValue } from "./StateProvider";
@@ -12,7 +12,8 @@ const Product = ({ itemCode, title, img, price, rating }) => {
 
   const { dispatch, state } = useStateValue();
   const basket = state.basket;
-
+  //for the add to cart animation
+  const [animation, setAnimation] = useState(false);
   const addToBasket = () => {
     //Add item to basket
     //if item already exists in basket, increase that item quantity's instead of pushing a new item into it.
@@ -39,6 +40,11 @@ const Product = ({ itemCode, title, img, price, rating }) => {
       console.log("item has been added");
       //item is dispatched to the UseContext State and localStorage
     }
+    //add to cart animation
+    setAnimation(true);
+    setTimeout(() => {
+      setAnimation(false);
+    }, 2000);
   };
 
   return (
@@ -50,9 +56,21 @@ const Product = ({ itemCode, title, img, price, rating }) => {
           <strong>{price}</strong>
         </p>
         <div className={s["product-rating"]}>{stars}</div>
-        <img src={img} alt="" />
+        <img className={s["product-image"]} src={img} alt="" />
 
-        <button onClick={addToBasket}>Add to Basket</button>
+        <button
+          className={`${s["add-btn"]} ${animation && s["clicked"]} `}
+          onClick={addToBasket}
+        >
+          <span className={s["add-to-cart"]}>Add to Cart</span>
+          <span className={s["added"]}>Added</span>
+          <div className={s["shopping-cart"]}>
+            <i className="fas fa-shopping-cart"></i>
+          </div>
+          <div className={s["box"]}>
+            <i className="fas fa-box"></i>
+          </div>
+        </button>
       </div>
     </div>
   );
