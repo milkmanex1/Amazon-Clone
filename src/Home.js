@@ -6,6 +6,21 @@ import { data1, data2, data3 } from "./sampleData";
 import { useStateValue } from "./StateProvider";
 import Fade from "react-reveal/Fade";
 
+import "swiper/css";
+// You need this css file for swiper to work
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/css/autoplay";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper";
+
 const Home = () => {
   const { state, dispatch } = useStateValue();
 
@@ -19,11 +34,44 @@ const Home = () => {
   return (
     <div className="home">
       <div className="home-container">
-        <img
-          className="home-img"
-          src="https://i.pinimg.com/originals/e4/c6/71/e4c6714c595b98ab93b2e16431b3b6d0.jpg"
-          alt=""
-        />
+        <Swiper
+          style={{ marginBottom: 0 }}
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          navigation={true}
+          loop={true}
+          slidesPerView={1}
+          autoplay={{ delay: 5000 }}
+        >
+          <SwiperSlide>
+            <img
+              className="home-img"
+              src="https://i.pinimg.com/originals/e4/c6/71/e4c6714c595b98ab93b2e16431b3b6d0.jpg"
+              alt=""
+            />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <img
+              className="home-img crop"
+              src="https://m.media-amazon.com/images/I/71yVCTqvWlL._AC_SL1500_.jpg"
+              alt=""
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              className="home-img crop"
+              src="https://static.vecteezy.com/system/resources/previews/003/445/643/non_2x/merry-christmas-sale-banner-free-vector.jpg"
+              alt=""
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              className="home-img crop"
+              src="https://m.media-amazon.com/images/I/61PdrBq-ysL._AC_SY355_.jpg"
+              alt=""
+            />
+          </SwiperSlide>
+        </Swiper>
         <Fade bottom>
           <div className="home-row">
             {data1.map((item) => {
