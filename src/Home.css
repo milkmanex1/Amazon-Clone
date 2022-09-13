@@ -15,13 +15,23 @@
 }
 .home-img {
   width: 90%;
+  object-fit: cover;
+
   z-index: -1;
   margin-bottom: -100px;
   mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+.crop {
+  height: 550px;
+  object-fit: cover;
 }
 .home-row {
   display: flex;
   z-index: 1;
   margin: 30px 20px;
+  /* margin-top: 20px; */
   column-gap: 25px;
+}
+.swiper-slide {
+  height: auto;
 }
