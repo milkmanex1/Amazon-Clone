@@ -1,6 +1,7 @@
 export const initialState = {
   basket: [],
   user: null,
+  isInputFocused: false,
 };
 
 export default function reducer(state, action) {
@@ -51,6 +52,11 @@ export default function reducer(state, action) {
       return {
         ...state,
         user: action.user,
+      };
+    case "focus input":
+      return {
+        ...state,
+        isInputFocused: action.payload,
       };
 
     default:

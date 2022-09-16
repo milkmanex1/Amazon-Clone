@@ -82,5 +82,12 @@
   background: #f0b623;
 }
 .product-price {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+}
+.total {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid rgb(174, 173, 173);
+  font-weight: bold;
+  font-size: 1rem;
 }

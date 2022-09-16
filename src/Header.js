@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import SearchIcon from "@mui/icons-material/Search";
@@ -9,11 +9,15 @@ import { useStateValue } from "./StateProvider";
 import { aut, auth } from "./firebase";
 import Jump from "react-reveal/Jump";
 
+//autocomplete components
+import Autocomplete from "./Autocomplete";
+
 const Header = () => {
   const navigate = useNavigate();
   const { state, dispatch } = useStateValue();
   const user = state.user;
   const basket = state.basket;
+  const isInputFocused = state.isInputFocused;
 
   const logout = () => {
     if (user) {
@@ -40,15 +44,18 @@ const Header = () => {
         </div>
       </div>
       <div className="search-bar">
-        <input type="text" />
-        {/* <SearchIcon
-            className="search-icon"
-            style={{ fontSize: 40 }}
-          ></SearchIcon> */}
-
+        {/* <input
+          type="text"
+          onFocus={focusInput}
+          onBlur={blurInput}
+          className={isInputFocused && "highlighted"}
+        /> */}
+        <div className="input">
+          <Autocomplete />
+        </div>
         <SearchIcon
           className="search-icon"
-          style={{ fontSize: 40 }}
+          style={{ fontSize: "2.5rem" }}
         ></SearchIcon>
       </div>
 

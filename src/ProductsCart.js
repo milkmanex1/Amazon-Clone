@@ -73,7 +73,10 @@ const ProductsCart = ({
             <div className={s["bottom"]}>
               <p className={s["product-price"]}>
                 <span>
-                  $<strong>{price}</strong>
+                  $<strong>{price} each</strong>
+                  <div className={s["total"]}>
+                    Total: ${(price * quantity).toFixed(2)}
+                  </div>
                 </span>
               </p>
             </div>

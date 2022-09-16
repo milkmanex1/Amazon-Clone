@@ -49,7 +49,7 @@ const Checkout = () => {
                 No items selected. <span>Select all items</span>
               </p>
             </div>
-            div
+
             <div className={s["basket-container"]}>
               {basket.map((item) => {
                 return (

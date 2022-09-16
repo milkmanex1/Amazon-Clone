@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 //each data array contains the info for each 'home-row'
 import Product from "./Product";
-import { data1, data2, data3 } from "./sampleData";
+import ProductJoined from "./ProductJoined";
+import { data1, data2, data3, data4, data5 } from "./sampleData";
 import { useStateValue } from "./StateProvider";
 import Fade from "react-reveal/Fade";
 
@@ -32,7 +33,7 @@ const Home = () => {
     console.log(basket);
   }, [basket]);
   return (
-    <div className="home">
+    <div className={`${state.isInputFocused && "filter"} home`}>
       <div className="home-container">
         <Swiper
           style={{ marginBottom: 0 }}
@@ -115,6 +116,49 @@ const Home = () => {
                 ></Product>
               );
             })}
+          </div>
+
+          <div className="row-title">
+            for your fitness needs <span>See more</span>
+          </div>
+          <div className="home-row-joined">
+            <Swiper
+              style={{ marginBottom: 10 }}
+              modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+              navigation={true}
+              slidesPerView={5}
+              slidesPerGroup={3}
+              scrollbar={true}
+            >
+              {data4.map((item) => {
+                return (
+                  <SwiperSlide>
+                    <ProductJoined img={item.img}></ProductJoined>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
+          <div className="row-title">
+            Frequently purchased Kitchen Supplies <span>See more</span>
+          </div>
+          <div className="home-row-joined">
+            <Swiper
+              style={{ marginBottom: 10 }}
+              modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+              navigation={true}
+              slidesPerView={5}
+              slidesPerGroup={3}
+              scrollbar={true}
+            >
+              {data5.map((item) => {
+                return (
+                  <SwiperSlide>
+                    <ProductJoined img={item.img}></ProductJoined>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
           </div>
         </Fade>
       </div>
