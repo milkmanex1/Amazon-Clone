@@ -10,6 +10,11 @@
   min-width: 250px;
   background-color: white;
   z-index: 1;
+  border-radius: 20px;
+  transition: transform 450ms;
+}
+.product:hover {
+  transform: scale(1.05);
 }
 .star-icon {
   color: orange;
@@ -56,11 +61,11 @@
   cursor: pointer;
   border-radius: 2px;
   position: relative;
-  transition: 0.3s ease-in-out;
+  /* transition: 0.3s ease-in-out ; */
   overflow: hidden;
 }
 .add-btn:hover {
-  background: #f0b522;
+  background: #f2af07;
 }
 /**------------- The animation------------- */
 .shopping-cart {

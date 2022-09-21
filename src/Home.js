@@ -72,6 +72,13 @@ const Home = () => {
               alt=""
             />
           </SwiperSlide>
+          <SwiperSlide>
+            <img
+              className="home-img crop"
+              src="https://lzd-img-global.slatic.net/g/skyline/i8/97d193508e7b4efa9157de89458fa39b-1360-480.jpg_2200x2200q75.jpg_.webp"
+              alt=""
+            />
+          </SwiperSlide>
         </Swiper>
         <Fade bottom>
           <div className="home-row">

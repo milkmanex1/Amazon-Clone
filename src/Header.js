@@ -36,7 +36,7 @@ const Header = () => {
       </div>
       <div className="address">
         <div className="top">
-          <p>Hello, {user?.email}</p>
+          <p>Hello, {user ? user.email : "Guest"}</p>
         </div>
         <div className="bottom">
           <LocationOnIcon className="location-icon"></LocationOnIcon>

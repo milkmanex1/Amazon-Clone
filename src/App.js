@@ -8,6 +8,10 @@ import Payment from "./Payment";
 import { useEffect } from "react";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
+//Stripe stuff
+// import { loadStripe } from "@stripe/stripe-js";
+// import { Elements } from "@stripe/react-stripe-js";
+//Can't get Stripe to work
 
 function App() {
   const { dispatch } = useStateValue();
