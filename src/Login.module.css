@@ -59,6 +59,9 @@
   text-align: left;
   margin-bottom: 20px;
 }
+.small span {
+  font-weight: bold;
+}
 .help {
   color: blue;
   font-size: 16px;

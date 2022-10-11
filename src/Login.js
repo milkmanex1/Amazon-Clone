@@ -54,20 +54,23 @@ const Login = () => {
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="example@email.com"
             />
             <div className={s["label"]}>Password</div>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              placeholder="Must have at least 6 characters"
             />
             <button className={s["login-btn"]} type="submit" onClick={signIn}>
               Continue
             </button>
 
             <div className={s["small"]}>
-              By continuing, you agree to Amazon's Conditions of Use and Privacy
-              Notice
+              <span>New User Sign In</span>: Enter any email and password into
+              the fields and then click 'Create your Amazon Account' at the
+              bottom of the page!
             </div>
             <div className={s["help"]}>Need help?</div>
           </form>
