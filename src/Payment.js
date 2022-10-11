@@ -21,10 +21,10 @@ const Payment = () => {
         <div className={s.left}>
           <div className={s.address}>
             <h4>Shipping Address</h4>
-            <p>{state.user.email}</p>
-            <p>Test Address</p>
+            <p>{state.user ? state.user.email : "please login!"}</p>
+            <p>Sungei Boleh 234 West Street</p>
             <p>Singapore, Singapore 854805 </p>
-            <p>Phone: 82015596</p>
+            <p>Phone: 9999 9999</p>
           </div>
           <div className={s.items}>
             <h4>Review Items and Delivery</h4>
