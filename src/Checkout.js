@@ -5,6 +5,7 @@ import ProductsCart from "./ProductsCart";
 import { sampleCartData } from "./CartData";
 import { useStateValue } from "./StateProvider";
 import { useNavigate } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -51,20 +52,22 @@ const Checkout = () => {
             </div>
 
             <div className={s["basket-container"]}>
-              {basket.map((item) => {
-                return (
-                  <ProductsCart
-                    key={item.id}
-                    itemCode={item.itemCode}
-                    id={item.id}
-                    title={item.title}
-                    price={item.price}
-                    img={item.img}
-                    rating={item.rating}
-                    quantity={item.quantity}
-                  ></ProductsCart>
-                );
-              })}
+              <AnimatePresence>
+                {basket.map((item) => {
+                  return (
+                    <ProductsCart
+                      key={item.id}
+                      itemCode={item.itemCode}
+                      id={item.id}
+                      title={item.title}
+                      price={item.price}
+                      img={item.img}
+                      rating={item.rating}
+                      quantity={item.quantity}
+                    ></ProductsCart>
+                  );
+                })}
+              </AnimatePresence>
             </div>
           </div>
         )}

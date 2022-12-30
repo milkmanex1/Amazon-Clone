@@ -4,6 +4,31 @@ import StarIcon from "@mui/icons-material/Star";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useStateValue } from "./StateProvider";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    y: "-30vh",
+    // x: "-30vw",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    x: 0,
+    transition: {
+      type: "spring",
+      //   duration: 1
+    },
+  },
+  exit: {
+    x: "60vw",
+    // y: "-40vw",
+    transition: { ease: "easeInOut" },
+    opacity: 0,
+    duration: 0.7,
+  },
+};
 
 const ProductsCart = ({
   itemCode,
@@ -45,7 +70,13 @@ const ProductsCart = ({
   };
 
   return (
-    <div className={s["product"]}>
+    <motion.div
+      className={s["product"]}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <div className={s["product-info"]}>
         <div className={s["left-side"]}>
           <img src={img} alt="" />
@@ -83,7 +114,7 @@ const ProductsCart = ({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
