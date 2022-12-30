@@ -4,7 +4,7 @@
 }
 
 .center img {
-  height: 100px;
+  height: 110px;
   width: 250px;
   /* border: 1px solid; */
   object-fit: cover;
@@ -63,6 +63,9 @@
 .small span {
   font-weight: bold;
 }
+.test {
+  margin: 0;
+}
 .test div {
   margin: 5px 0;
 }
@@ -70,7 +73,7 @@
   color: blue;
   font-size: 16px;
   text-align: left;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   cursor: pointer;
 }
 .help:hover {
