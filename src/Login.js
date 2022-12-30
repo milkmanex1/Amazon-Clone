@@ -42,7 +42,8 @@ const Login = () => {
       <div className={s["center"]}>
         <img
           className={s["logo"]}
-          src="https://www.doorwaysva.org/wp-content/uploads/2020/08/amazon-logo-transparent.png"
+          //   src="https://www.doorwaysva.org/wp-content/uploads/2020/08/amazon-logo-transparent.png"
+          src="/images/amazonlogo2.jpg"
           alt=""
           onClick={() => navigate("/home")}
         />
@@ -71,6 +72,13 @@ const Login = () => {
               <span>New User Sign In</span>: Enter any email and password into
               the fields and then click 'Create your Amazon Account' at the
               bottom of the page!
+            </div>
+            <div className={s["small"]}>
+              <span>Too Lazy? Use this test account:</span>
+              <div className={s["test"]}>
+                <div>Email: test@gmail.com</div>
+                <div>Password: test123</div>
+              </div>
             </div>
             <div className={s["help"]}>Need help?</div>
           </form>

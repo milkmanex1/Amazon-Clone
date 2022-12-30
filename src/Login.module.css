@@ -4,7 +4,7 @@
 }
 
 .center img {
-  height: 70px;
+  height: 100px;
   width: 250px;
   /* border: 1px solid; */
   object-fit: cover;
@@ -28,6 +28,7 @@
 .box-center h2 {
   text-align: left;
 }
+
 .label {
   font-size: 15px;
   font-weight: bold;
@@ -57,10 +58,13 @@
 .small {
   font-size: 15px;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .small span {
   font-weight: bold;
+}
+.test div {
+  margin: 5px 0;
 }
 .help {
   color: blue;
