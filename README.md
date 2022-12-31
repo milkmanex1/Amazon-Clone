@@ -5,7 +5,7 @@ I built a small segment of everyone's favourite E-commerce site, with some featu
 
 ### Video Demo
 
-https://user-images.githubusercontent.com/81763256/203465660-d2e167e2-930f-43a9-bd2e-cb2eadb2886e.mp4
+https://user-images.githubusercontent.com/81763256/210123415-1a343253-12f8-4203-9788-3b3ae0fc6ef0.mp4
 
 
 Amazon Clone is built entirely from scratch with the following technologies:
