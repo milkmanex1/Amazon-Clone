@@ -13,6 +13,7 @@ Amazon Clone is built entirely from scratch with the following technologies:
 - React
 - Css Modules
 - Firebase
+- Framer Motion
 - Material Ui
 - Swiper Js
 - Context Api
